@@ -1,40 +1,3 @@
-<style>
-/** DARK THEME - CSS **/
-.dark-theme #formLabel{
- color:#5fd0a5;
-}
-
-.dark-theme input::placeholder, .dark-theme input:valid, .dark-theme input:focus{
-  font-family: 'Chakra Petch', sans-serif;
-  font-weight: 500;
-  font-style: normal;
-  font-size:16px;
-  color:gray;
-}
-
-
-.dark-theme textarea::placeholder{
-    font-family: 'Chakra Petch', sans-serif;
-    font-weight: bold;
-    font-style: normal;
-    color: gray;
-}
-
-.dark-theme select:option{
-    font-family: 'Chakra Petch', sans-serif;
-    font-weight: bold;
-    font-style: normal;
-    color: gray;
-    padding:10px;
-    margin: 10px;
-    font-size:10px;
-}
-
-.dark-theme input:focus, .dark-theme textarea:focus{
-  color:gray;
-}
-/** DARK THEME - CSS **/
-</style>
 <div class="page-content">
       <? $this->components( 'breadcrumb' , [ 'Menu' , 'Ekle' , 'style' => 'color:purple;' ]  ); ?>
       <div class="main-wrapper">
@@ -119,16 +82,16 @@
                                            </div>
                                      </div>
                                      <div class="row">
-                                           <div class="boyutla text-right hidden-sm hidden-xs">
-                                                <button type="submit" name="menuCreate" class="margin-top-30 ceyrek btn btn-primary Chakra yazi_500" style="font-size:20px;">
-                                                       EKLE
-                                                </button>
-                                           </div>
-                                           <div class="boyutla text-right hidden-xl hidden-lg hidden-md">
+                                          <div class="col-4 hidden-sm hidden-xs justify-content-end aling-self-end aling-items-end offset-xl-8 offset-lg-8 offset-md-8" >
                                                 <button type="submit" name="menuCreate" class="margin-top-30 boyutla btn btn-primary Chakra yazi_500" style="font-size:20px;">
                                                        EKLE
                                                 </button>
-                                           </div>
+                                          </div>
+                                          <div class="col-12 hidden-xl hidden-lg hidden-md">
+                                                <button type="submit" name="menuCreate" class="margin-top-30 boyutla btn btn-primary Chakra yazi_500" style="font-size:20px;">
+                                                       EKLE
+                                                </button>
+                                          </div>
                                      </div>
 
                               </div>

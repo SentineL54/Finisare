@@ -46,24 +46,24 @@ class menu extends Controller {
                         'upmenu_link' => 0
                         ] ;
 
-                    $this -> view( 'add' , $this -> model -> createBring( $data = $this ) , 'pages/' . self::$viewFolder );
+                    $this -> view( 'add' , $this -> model -> createBring( $data = $this ) , self::$viewFolder );
               } else
-              $this -> view( 'add' , $this -> model -> readBringMen() , 'pages/' . self::$viewFolder );
+              $this -> view( 'add' , $this -> model -> readBringMen() , self::$viewFolder );
       }
 
       public function read( ) {
 
-             $this -> view( 'list' , $this -> model -> readBring( ), 'pages/' . self::$viewFolder );
+             $this -> view( 'list' , $this -> model -> readBring( ), self::$viewFolder );
       }
 
       public function delete( $data ){
 
              if( isset( $_POST['menuDelete'] ) ) {
 
-                   $this -> view( 'delete' , $this -> model -> deleteBring( $data ) , 'pages/' . self::$viewFolder );
+                   $this -> view( 'delete' , $this -> model -> deleteBring( $data ) , self::$viewFolder );
 
              } else
-                  $this -> view( 'delete' , $this -> model -> readBring( $data ) , 'pages/' . self::$viewFolder );
+                  $this -> view( 'delete' , $this -> model -> readBring( $data ) , self::$viewFolder );
       }
 
       public function edit( $data ){
@@ -103,7 +103,7 @@ class menu extends Controller {
                   $this -> view(
                     'edit' ,
                     $this->dataInput ? $this -> model -> editBring( $data , $this ) : FALSE ,
-                    'pages/' . self::$viewFolder
+                    self::$viewFolder
                   );
 
 
@@ -114,13 +114,13 @@ class menu extends Controller {
                       $this -> model -> readBring( $data ) ?
                       [ 'data' => $this -> model -> readBring( $data ) , 'menu' => $this -> model -> readBringMen( ) ] :
                       FALSE ,
-                      'pages/' . self::$viewFolder
+                      self::$viewFolder
                    );
              }
       }
 
       public function altmenu( $data ){
 
-             $this -> view( 'list' , $this -> model -> subMenuSearch( $data ), 'pages/' . self::$viewFolder );
+             $this -> view( 'list' , $this -> model -> subMenuSearch( $data ), self::$viewFolder );
       }
 }

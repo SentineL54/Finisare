@@ -5,8 +5,6 @@ class menuu extends Model {
 
       private $tableName = 'menu';
 
-      public $rowCount;
-
       private function movementSave( $data = NULL ){
 
               if( $data != NULL ){

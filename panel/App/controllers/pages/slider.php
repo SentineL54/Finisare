@@ -10,8 +10,8 @@ class slider extends Controller {
           'path' => 'slider',
           'type' => 'jpeg', // png - webp - jpeg
           'ratio_fill' => FALSE, // TRUE - FALSE
-          'width' => 721,
-          'height' => 1180,
+          'width' => 2400,
+          'height' => 1600,
         ];
 
         public function __construct(){
@@ -32,25 +32,25 @@ class slider extends Controller {
                           'picture' => self::pictureConfig
                       ] );
 
-                      $this -> view ( 'add' , $this->model->createBring( $data = $this ) , 'pages/' . self::$viewFolder );
+                      $this -> view ( 'add' , $this->model->createBring( $data = $this ) , self::$viewFolder );
 
                }  else
-                  $this -> view( 'add' , NULL , 'pages/' . self::$viewFolder );
+                  $this -> view( 'add' , NULL , self::$viewFolder );
 
         }
 
         public function read(){
 
                echo '<script src="'.domain.dirnameProject.'/'.'assets/js/lightbox-plus-jquery.min.js"></script>';
-               $this -> view( 'list' , $this -> model -> readBring() , 'pages/' . self::$viewFolder );
+               $this -> view( 'list' , $this -> model -> readBring() , self::$viewFolder );
         }
 
         public function delete( $data = NULL ){
 
                if( isset( $_POST['sliderDelete'] ) )
-                   $this -> view( 'delete' , $this -> model -> deleteBring( $data , $this ) , 'pages/' . self::$viewFolder );
+                   $this -> view( 'delete' , $this -> model -> deleteBring( $data , $this ) , self::$viewFolder );
                else
-                   $this -> view( 'delete' , $this -> model -> readBring( $data ) == TRUE ? $this -> model -> readBring( $data ) : NULL , 'pages/' . self::$viewFolder ); // $this -> model -> readBring( $data ) == TRUE ? $this -> model -> readBring( $data ) : FALSE
+                   $this -> view( 'delete' , $this -> model -> readBring( $data ) == TRUE ? $this -> model -> readBring( $data ) : NULL , self::$viewFolder ); // $this -> model -> readBring( $data ) == TRUE ? $this -> model -> readBring( $data ) : FALSE
         }
 
         public function edit( $data ){
@@ -82,10 +82,10 @@ class slider extends Controller {
                              ]
                          ] );
 
-                      $this -> view( 'edit' , $this->dataInput ? $this -> model -> editBring( $data , $this ) : FALSE , 'pages/' . self::$viewFolder );
+                      $this -> view( 'edit' , $this->dataInput ? $this -> model -> editBring( $data , $this ) : FALSE , self::$viewFolder );
 
                } else
-               $this -> view( 'edit' , $this -> model -> readBring( $data ) , 'pages/' . self::$viewFolder );
+               $this -> view( 'edit' , $this -> model -> readBring( $data ) , self::$viewFolder );
         }
 
         public function config(){

@@ -2,8 +2,8 @@
 
 class category extends Controller {
 
-     private static $modelName = 'category';
-     private static $viewFolder = 'categoryy';
+     private static $modelName = 'categoryy';
+     private static $viewFolder = 'category';
 
 
      public function __construct(){
@@ -15,7 +15,11 @@ class category extends Controller {
      }
 
      public function creat(  ){
-           echo 'BURASI';
+
+             if( isset( $_POST['categoryCreate'] ) ) {
+                 echo 'POST EDİLdi';
+             } else
+               $this -> view( 'add' , NULL , self::$viewFolder );
      }
 
 

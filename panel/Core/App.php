@@ -22,7 +22,7 @@ class App {
              $this->parseUrll = self::parseUrl();
 
              // Css -> lib -> Loading Page
-             \System\Libs\LibbFile::cssLib();
+             \App\Libs\LibbFile::cssLib();
 
 
              if( $this->parseUrll ){
@@ -46,7 +46,7 @@ class App {
 
 
              // JS -> lib
-             \System\Libs\LibbFile::jsLib();
+             \App\Libs\LibbFile::jsLib();
       }
 
       private function Route( $parseUrll , $controllerFile ){

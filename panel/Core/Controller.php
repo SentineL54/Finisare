@@ -47,7 +47,7 @@ class Controller {
       protected function view( $view , $data = [] , $file = NULL ){
 
                 if( $file !== NULL )
-                     $file = $file.'/';
+                     $file = 'pages/'.$file.'/';
 
                 $viewFile = documentRoot.homeDirectory.'views/' . $file . strtolower( $view ) . '.php';
 
