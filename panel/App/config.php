@@ -16,7 +16,7 @@ define(
 
 
 /******  DataBase --> Information ********/
-define( 'DB_HOST' , 'localhost' );
+define( 'DB_HOST' , '94.73.150.102' );
 define( 'DB_DATABASE' , 'u8480914_finisar' );
 define( 'DB_USERNAME' , 'u8480914_finisar' );
 define( 'DB_PASSWORD' , 'XPxx64S2GPim57M' ); // KRtn8

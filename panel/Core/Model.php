@@ -6,10 +6,10 @@
 require_once __DIR__ . '/DB/Database.php';
 require_once __DIR__ . '/DB/Interface.php';
 
-// use System\Libs\DataBase as DB;
+use System\Libs\DataBase as DB;
 
 
-abstract class Model extends System\Libs\DataBase implements System\Libs\IntrFace
+abstract class Model extends DB implements System\Libs\IntrFace
 {
          final public function create( $query = NULL ){
 
