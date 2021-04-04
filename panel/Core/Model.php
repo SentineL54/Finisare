@@ -6,10 +6,10 @@
 require_once __DIR__ . '/DB/Database.php';
 require_once __DIR__ . '/DB/Interface.php';
 
-use System\Libs\DataBase as DB;
+// use System\Libs\DataBase as DB;
 
 
-abstract class Model extends DB implements System\Libs\IntrFace
+abstract class Model extends System\Libs\DataBase implements System\Libs\IntrFace
 {
          final public function create( $query = NULL ){
 
@@ -25,7 +25,7 @@ abstract class Model extends DB implements System\Libs\IntrFace
                 $conn = $this->closeDbCon();
 
                 // VARİABLE -> UNSET
-                unset( $conn , $data );
+                unset( $query , $conn , $data );
          }
 
 
@@ -58,7 +58,7 @@ abstract class Model extends DB implements System\Libs\IntrFace
                 $conn = $this->closeDbCon();
 
                 // VARİABLE -> UNSET
-                unset( $data , $conn );
+                unset( $query , $data , $conn , $result );
          }
 
 
@@ -114,6 +114,8 @@ abstract class Model extends DB implements System\Libs\IntrFace
 
                // DB -> CLOSE
                $conn = $this->closeDbCon();
+
+               unset( $query , $data , $delete , $conn );
          }
 
          final public function rowCountt( $data = NULL ){
@@ -139,6 +141,6 @@ abstract class Model extends DB implements System\Libs\IntrFace
                 $conn = $this->closeDbCon();
 
                 // VARİABLE -> UNSET
-                unset( $data , $conn );
+                unset( $data , $conn , $result );
          }
 }
