@@ -6,11 +6,6 @@ class sliderr extends Model {
 
       private $tableName = 'slider';
 
-      public $id;
-      public $title;
-      public $description;
-      public $image;
-
       private function movementSave( $data = NULL ){
 
               if( $data != NULL ){
@@ -28,15 +23,13 @@ class sliderr extends Model {
 
              if( $data != NULL ){
 
-                $this -> random = $data->random( 7 ); // // Random - Number -> Create
-
                 $result = $this->create( "INSERT INTO $this->tableName SET
                   random = :random,
                   kimlik = :kimlik,
-                  resim_yol = :resim_yol,
-                  baslik = :title,
-                  aciklama = :description,
-                  slider_link = :link,
+                  image = :image,
+                  title = :title,
+                  description = :description,
+                  link = :link,
                   dil = :dil,
                   datee = :datee,
                   ip_addres = :ip_addres,
@@ -44,26 +37,28 @@ class sliderr extends Model {
                   " );
 
                 $result->execute( [
-                    'random' => $this -> random,
+                    'random' => $data -> random,
                     'kimlik' => 'wefwefwefwef',
-                    'resim_yol' => $data->pictureData,
-                    'title' => $_POST['title'],
-                    'description' => $_POST['description'],
-                    'link' => $data->sefLink( $_POST['title'] ),
+                    'image' => $data -> image,
+                    'title' => $data -> title,
+                    'description' => $data -> description,
+                    'link' => $data -> link,
                     'dil' => 'eng',
                     'datee' => dateClock,
                     'ip_addres' => ipData,
                     'user' => user
                 ] );
 
-                $this->movementSave = $this->movementSave( [ 'slider' , $this -> random , 'Ekleme İşlemi başarılı' , dateClock , ipData , user ] );
+                $this->movementSave = $this->movementSave( [ 'slider' , $data -> random , 'Ekleme İşlemi başarılı' , dateClock , ipData , user ] );
 
                 if ( $result and $this->movementSave ){
                      return TRUE;
                 } else
                     return FALSE;
+
              } else
                return NULL;
+
       }
 
       public function readBring( $data = NULL ){
@@ -100,13 +95,10 @@ class sliderr extends Model {
 
              if( $data != NULL ){
 
-                    // RANDOM -> Create
-                    $this -> random = $classThis->random();
-
                     // SQL - UPDATE
                     $this -> update = $this -> update( "UPDATE $this->tableName SET " . $classThis->dataTheSon( $classThis ) . 'random=:random, datee=:datee, ip_addres=:ip_addres, user=:user WHERE '.'random=:oldRandom' , array_merge( $classThis->dataInput ,
                     [
-                      'random' => $this -> random,
+                      'random' => $classThis -> random,
                       'oldRandom' => $data,
                       'datee' => dateClock,
                       'ip_addres' => ipData,
@@ -114,7 +106,7 @@ class sliderr extends Model {
                       ] ) );
 
                     // MOVEMENT SAVE
-                    $this -> movementSave = $this->movementSave( [ 'slider' , $this -> random , 'Düzenleme İşlemi başarılı' , dateClock , ipData , user ] );
+                    $this -> movementSave = $this->movementSave( [ 'slider' , $classThis -> random , 'Düzenleme İşlemi başarılı' , dateClock , ipData , user ] );
 
                     if( $this -> update and $this -> movementSave ){
 
@@ -125,6 +117,7 @@ class sliderr extends Model {
 
                     } else
                        return NULL;
+
 
              } else
                 return NULL;

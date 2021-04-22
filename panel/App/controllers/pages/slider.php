@@ -6,13 +6,15 @@ class slider extends Controller {
         private static $viewFolder = 'slider';
         private static $modelName = 'sliderr';
 
+        // Picture - Create info
         const pictureConfig = [
           'path' => 'slider',
-          'type' => 'jpeg', // png - webp - jpeg
+          'type' => 'jpg', // png - webp - jpeg
           'ratio_fill' => FALSE, // TRUE - FALSE
-          'width' => 2400,
-          'height' => 1600,
+          'width' => 1280,
+          'height' => 720,
         ];
+        // Picture - Create info
 
         public function __construct(){
                $this -> model = $this -> model( self::$modelName , 'pages/' );
@@ -26,7 +28,24 @@ class slider extends Controller {
 
                if( isset ( $_POST['sliderCreate'] ) ){
 
-                      $this->pictureData = $this->pictureLoad( [
+                      // Random - Number -> Create
+                      $this -> random = $this->random( 7 );
+
+                      // Title - Create
+                      $this -> title = $this->strReplace( $_POST['title'] );
+
+                      // Seflink - Create
+                      $this -> link = $this->sefLink( $_POST['title'] );
+
+                      // Description - Create
+                      if( isset ( $_POST['description'] ) )
+                         echo 'wefwefwe';
+                      else
+                         echo 'AYDEM';
+                      // $this -> description = $this->strReplace( $_POST['description'] );
+
+                      // Images -> Create
+                      $this->image = $this->pictureLoad( [
                           'name' => $this->random( 10 ),
                           'file' => $_FILES['image'],
                           'picture' => self::pictureConfig
@@ -36,13 +55,12 @@ class slider extends Controller {
 
                }  else
                   $this -> view( 'add' , NULL , self::$viewFolder );
-
         }
 
         public function read(){
 
                echo '<script src="'.domain.dirnameProject.'/'.'assets/js/lightbox-plus-jquery.min.js"></script>';
-               $this -> view( 'list' , $this -> model -> readBring() , self::$viewFolder );
+               $this -> view( 'read' , $this -> model -> readBring() , self::$viewFolder );
         }
 
         public function delete( $data = NULL ){
@@ -53,11 +71,15 @@ class slider extends Controller {
                    $this -> view( 'delete' , $this -> model -> readBring( $data ) == TRUE ? $this -> model -> readBring( $data ) : NULL , self::$viewFolder ); // $this -> model -> readBring( $data ) == TRUE ? $this -> model -> readBring( $data ) : FALSE
         }
 
-        public function edit( $data ){
+        public function update( $data ){
 
-               if( isset( $_POST['sliderEdit'] ) ){
+               if( isset( $_POST['sliderUpdate'] ) ){
 
-                        // PİCTURE - CREATE
+                        // RANDOM -> Create
+                        $this -> random = $this->random();
+
+
+                        // Picture - Create
                         $this->pictureData = $this->pictureLoad(
                          [
                              'name' => $this->random( 10 ),
@@ -71,21 +93,22 @@ class slider extends Controller {
                        // Data Control
                        $this->dataInput = $this->dataInputCheck( [
                              [
-                               'baslik'  => $_POST['title'] ,
-                               'aciklama' => $_POST['description'],
-                               'resim_yol' => $this->pictureData
+                               'title'  => $this->strReplace( $_POST['title'] ),
+                               'description' => $this->strReplace( $_POST['description'] ),
+                               'image' => $this->pictureData
                              ] ,
                              [
-                               $_POST['oldData']['title'] ,
-                               $_POST['oldData']['description'],
+                               $this->strReplace( $_POST['oldData']['title'] ),
+                               $this->strReplace( $_POST['oldData']['description'] ),
                                $_POST['oldData']['image'],
                              ]
                          ] );
 
-                      $this -> view( 'edit' , $this->dataInput ? $this -> model -> editBring( $data , $this ) : FALSE , self::$viewFolder );
+                    $this -> view( 'update' , $this->dataInput ? $this -> model -> editBring( $data , $this ) : FALSE , self::$viewFolder );
+
 
                } else
-               $this -> view( 'edit' , $this -> model -> readBring( $data ) , self::$viewFolder );
+               $this -> view( 'update' , $this -> model -> readBring( $data ) , self::$viewFolder );
         }
 
         public function config(){

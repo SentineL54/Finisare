@@ -16,10 +16,10 @@ define(
 
 
 /******  DataBase --> Information ********/
-define( 'DB_HOST' , '94.73.150.102' );
-define( 'DB_DATABASE' , 'u8480914_finisar' );
-define( 'DB_USERNAME' , 'u8480914_finisar' );
-define( 'DB_PASSWORD' , 'XPxx64S2GPim57M' ); // KRtn8
+define( 'DB_HOST' , 'localhost' );
+define( 'DB_DATABASE' , 'vbName' );
+define( 'DB_USERNAME' , 'vbUserName' );
+define( 'DB_PASSWORD' , 'password' ); // KRtn8
 define( 'CHARSET' , 'utf8' );
 /******  DataBase --> Information ********/
 
@@ -42,7 +42,7 @@ define( 'secondary' , 'Değer Bulunamadı - Yönlendiriliyorsunuz.' );
 define( 'dil' , 'TR' );
 setlocale(LC_TIME, strtolower(dil).'_'.dil.'.UTF-8');
 define( 'dateClock' , strftime('%d %B %Y | %A - %T') );
-define( 'user' , 'Ruşan Ali' );
+define( 'user' , 'Ali' );
 define( 'ipData' , $_SERVER["REMOTE_ADDR"] );
 define( 'urlMap' , $_SERVER["REQUEST_URI"] );
 define( 'space' , '&nbsp;' );

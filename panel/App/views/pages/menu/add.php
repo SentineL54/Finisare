@@ -24,9 +24,7 @@
 
                    <form method="post" id="grayColor">
                          <div class="card">
-
                               <div class="card-body">
-
                                     <div class="row">
                                           <div class="col-xl-7 col-lg-7 col-md-7 col-sm-12 col-xs-12">
                                                 <div class="form-group">
@@ -81,19 +79,18 @@
                                                  </div>
                                            </div>
                                      </div>
-                                     <div class="row">
-                                          <div class="col-4 hidden-sm hidden-xs justify-content-end aling-self-end aling-items-end offset-xl-8 offset-lg-8 offset-md-8" >
-                                                <button type="submit" name="menuCreate" class="margin-top-30 boyutla btn btn-primary Chakra yazi_500" style="font-size:20px;">
-                                                       EKLE
-                                                </button>
-                                          </div>
-                                          <div class="col-12 hidden-xl hidden-lg hidden-md">
-                                                <button type="submit" name="menuCreate" class="margin-top-30 boyutla btn btn-primary Chakra yazi_500" style="font-size:20px;">
-                                                       EKLE
-                                                </button>
-                                          </div>
-                                     </div>
-
+                              </div>
+                              <div class="card-footer">
+                                    <div class="boyutla text-right hidden-sm hidden-xs">
+                                         <button type="submit" name="menuCreate" class="ceyrek btn btn-primary Chakra yazi_500" style="font-size:20px;">
+                                                 EKLE
+                                         </button>
+                                    </div>
+                                    <div class="boyutla text-right hidden-xl hidden-lg hidden-md">
+                                         <button type="submit" name="menuCreate" class="boyutla btn btn-primary Chakra yazi_500" style="font-size:20px;">
+                                                 EKLE
+                                         </button>
+                                    </div>
                               </div>
 
                         </div>
