@@ -3,8 +3,8 @@
 
 
 
-define( 'link' , 'https://alinedim.com/' );
-define( 'favicon' , 'https://alinedim.com/images/favicon.png' );
+define( 'link' , 'website.link' );
+define( 'favicon' , 'website.icon' );
 define(
   'domain' ,
   (!isset($_SERVER['HTTPS']) || $_SERVER['HTTPS'] != 'on')
@@ -42,7 +42,7 @@ define( 'secondary' , 'Değer Bulunamadı - Yönlendiriliyorsunuz.' );
 define( 'dil' , 'TR' );
 setlocale(LC_TIME, strtolower(dil).'_'.dil.'.UTF-8');
 define( 'dateClock' , strftime('%d %B %Y | %A - %T') );
-define( 'user' , 'Ali' );
+define( 'user' , 'Ruşan Ali' );
 define( 'ipData' , $_SERVER["REMOTE_ADDR"] );
 define( 'urlMap' , $_SERVER["REQUEST_URI"] );
 define( 'space' , '&nbsp;' );
