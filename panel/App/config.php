@@ -19,21 +19,21 @@ define(
 define( 'DB_HOST' , 'localhost' );
 define( 'DB_DATABASE' , 'vbName' );
 define( 'DB_USERNAME' , 'vbUserName' );
-define( 'DB_PASSWORD' , 'password' ); // KRtn8
+define( 'DB_PASSWORD' , 'password' );
 define( 'CHARSET' , 'utf8' );
 /******  DataBase --> Information ********/
 
 
 /******  User - Message --> Information ********/
-define( 'danger' , 'Bir Sorun Oluştu - Yönlendiriliyorsunuz.' );
+define( 'danger' , 'Problem Has Occurred - You Are Redirected.' );
 
-define( 'success' , 'İşlem Başarılı - Yönlendiriliyorsunuz.' );
+define( 'success' , 'Successful - You are being redirected.' );
 
-define( 'warning' , 'Dikkat Edilmesi gereken bir konu - Yönlendiriliyorsunuz.' );
+define( 'warning' , 'One thing to watch out for - You are being redirected.' );
 
-define( 'info' , 'Değişen bir şey yok gibi duruyor - Yönlendiriliyorsunuz.' );
+define( 'info' , 'Nothing seems to be changing - You are being diverted.' );
 
-define( 'secondary' , 'Değer Bulunamadı - Yönlendiriliyorsunuz.' );
+define( 'secondary' , 'Value Not Found - You are being redirected.' );
 /******  User - Message --> Information ********/
 
 
