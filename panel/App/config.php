@@ -3,8 +3,8 @@
 
 
 
-define( 'link' , 'https://alinedim.com/' );
-define( 'favicon' , 'https://alinedim.com/images/favicon.png' );
+define( 'link' , 'website.link' );
+define( 'favicon' , 'website.icon' );
 define(
   'domain' ,
   (!isset($_SERVER['HTTPS']) || $_SERVER['HTTPS'] != 'on')
