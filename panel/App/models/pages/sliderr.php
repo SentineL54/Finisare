@@ -79,10 +79,7 @@ class sliderr extends Model {
                    // MOVEMENT SAVE
                    $this->movementSave = $this->movementSave( [ 'slider' , $data , 'Silme İşlemi başarılı' , dateClock , ipData , user ] );
 
-                   // Picture - Unlink
-                   $this -> pictureUnlink = $classThis->pictureUnlink( $image = $_POST['image'] , $classThis );
-
-                   if( $this -> pictureUnlink AND $this->delete AND $this->movementSave )
+                   if( $this->delete AND $this->movementSave )
                         return $this->delete;
                    else
                         return FALSE;

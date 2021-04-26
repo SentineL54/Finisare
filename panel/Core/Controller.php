@@ -306,7 +306,7 @@ class Controller {
               if( $text != NULL )
                    return str_replace( "'","&lsquo;", str_replace( '"',"&quot;",$text ) );
               else
-                   return NULL;
+                   return ' ';
 
        }
 

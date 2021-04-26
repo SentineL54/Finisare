@@ -38,11 +38,8 @@ class slider extends Controller {
                       $this -> link = $this->sefLink( $_POST['title'] );
 
                       // Description - Create
-                      if( isset ( $_POST['description'] ) )
-                         echo 'wefwefwe';
-                      else
-                         echo 'AYDEM';
-                      // $this -> description = $this->strReplace( $_POST['description'] );
+                      $this -> description = $this->strReplace( $_POST['title'] );
+                      // $this->strReplace( $_POST['description'] )
 
                       // Images -> Create
                       $this->image = $this->pictureLoad( [
@@ -65,9 +62,12 @@ class slider extends Controller {
 
         public function delete( $data = NULL ){
 
-               if( isset( $_POST['sliderDelete'] ) )
-                   $this -> view( 'delete' , $this -> model -> deleteBring( $data , $this ) , self::$viewFolder );
-               else
+               if( isset( $_POST['sliderDelete'] ) ) {
+                    // Picture - Unlink
+                    if( $_POST['image'] ) $this -> pictureUnlink = $this->pictureUnlink( $_POST['image'] );
+
+                    $this -> view( 'delete' , $this -> model -> deleteBring( $data , $this ) , self::$viewFolder );
+              } else
                    $this -> view( 'delete' , $this -> model -> readBring( $data ) == TRUE ? $this -> model -> readBring( $data ) : NULL , self::$viewFolder ); // $this -> model -> readBring( $data ) == TRUE ? $this -> model -> readBring( $data ) : FALSE
         }
 
