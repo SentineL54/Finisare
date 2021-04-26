@@ -1,5 +1,5 @@
 <?php
-
+echo 'buradayımm';
 
 class slider extends Controller {
 
