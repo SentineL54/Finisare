@@ -1,5 +1,5 @@
 {
-    "name": "finisare/cms",
+    "name": "finisare/panel",
     "description": "finisare",
     "require": {
         "tinify/tinify": "^1.5"
