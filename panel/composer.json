@@ -1,35 +1,19 @@
 {
-  "name": "alinedim/finisare",
-  "type": "library",
-  "description": "wewef wefwfwefwef - Php Api Sdk",
-  "keywords": [
-    "entegrasyon"
-  ],
-  "license": "MIT",
-  "authors": [
-    {
-      "name": "wefwefwfwef wefwef",
-      "email": "wdwd@wdww.net",
-      "homepage": "https://rfrgrgrgr.net"
-    }
-  ],
-  "config": {
-    "platform": {
-      "php": "5.6"
+    "name": "finisare/cms",
+    "description": "finisare",
+    "require": {
+        "tinify/tinify": "^1.5"
     },
-    "autoloader-suffix": "Hurdaci",
-    "optimize-autoloader": true
-  },
-  "minimum-stability": "stable",
-  "autoload": {
-    "psr-4": {
-      "Shopier\\": "src/"
-    }
-  },
-  "require": {
-    "ext-json": "*"
-  },
-  "require-dev": {
-    "vlucas/phpdotenv": "^4.1"
-  }
+    "autoload": {
+        "psr-4": {
+            "Core\\": "Core/",
+            "App\\": "App/"
+        }
+    },
+    "authors": [
+       {
+          "name": "alinedim",
+          "email": "info@alinedim.com"
+       }
+    ]
 }
