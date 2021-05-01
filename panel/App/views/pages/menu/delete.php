@@ -31,7 +31,7 @@
                      }
 
                } else {
-                    foreach ($data as $row):  ?>
+                    foreach ($data as $items):  ?>
                          <form method="post" id="grayColor" >
 
                                <div class="card col-12 padding-top-30 padding-bottom-30">
@@ -42,7 +42,7 @@
                                                        <div class="form-group">
                                                              <label for="exampleInputEmail3" class="Chakra yazi_700" id="formLabel">Menü Başlık :</label>
                                                              <input
-                                                             value="<?=$row['title'];?>"
+                                                             value="<?=$items['title'];?>"
                                                              required
                                                              readonly
                                                              type="text"
@@ -59,15 +59,15 @@
                                                              <label for="exampleInputEmail3" class="Chakra yazi_700" id="formLabel">Üst Menü :</label>
                                                              <select class="js-states form-control"  name="upmenu" tabindex="-1" style="display: none; width: 100%;">
                                                                      <?php
-                                                                         if( $row['upmenu_id'] == 0 )
+                                                                         if( $items['upmenu_id'] == 0 )
                                                                             echo '<optgroup><option value="0@0@0@0" selected>ANA MENÜ</option></optgroup>';
                                                                          else
-                                                                            echo '<option value="'.$row['upmenu'].'@'.$row['upmenu_random'].'@'.$row['upmenu_id'].'@'.$row['upmenu_link'].'@'.$row['const_random'].'" selected>'.$row['upmenu'].'</option>';
+                                                                            echo '<option value="'.$items['upmenu'].'@'.$items['upmenu_random'].'@'.$items['upmenu_id'].'@'.$items['upmenu_link'].'@'.$items['const_random'].'" selected>'.$items['upmenu'].'</option>';
 
                                                                           /*
                                                                          foreach( $data['menu'] as $dataMenu ):
 
-                                                                                if( $dataMenu['random'] != $row['random'] and $dataMenu['random'] != $row['upmenu_random'] ): ?>
+                                                                                if( $dataMenu['random'] != $items['random'] and $dataMenu['random'] != $items['upmenu_random'] ): ?>
                                                                                        <option value="<?=$dataMenu['title']?>@<?=$dataMenu['random']?>@<?=$dataMenu['id']?>@<?=$dataMenu['link']?> ">
                                                                                                <?=$dataMenu['title'];?>
                                                                                        </option><?php
@@ -83,30 +83,29 @@
                                                  <div class="col-xl-12 col-sm-12 col-xs-12 margin-top-20">
                                                        <div class="form-group">
                                                              <label for="exampleInputEmail3" class="Chakra yazi_700" id="formLabel">* Menü Description :</label>
-                                                             <textarea class="form-control" readonly name="description" maxlength="165" minlength="165" id="exampleFormControlTextarea1" rows="2"><?=$row['description'];?></textarea>
+                                                             <textarea class="form-control" readonly name="description" maxlength="165" minlength="165" id="exampleFormControlTextarea1" rows="2"><?=$items['description'];?></textarea>
                                                        </div>
                                                  </div>
                                           </div>
-                                          <!--
+
                                           <div class="row">
                                                  <div class="col-xl-12 col-sm-12 col-xs-12 margin-top-20">
                                                        <div class="form-group">
                                                              <label for="exampleInputEmail3" class="Chakra yazi_700" id="formLabel">Menü İçerik :</label>
-                                                             <textarea name="content" id="editor" readonly autocomplete="on"><?=$row['content'];?></textarea>
-                                                             <textarea class="form-control" readonly name="description" maxlength="165" minlength="165" id="exampleFormControlTextarea1" rows="8"><?=$row['content'];?></textarea>
+                                                             <textarea name="content" id="editor" readonly autocomplete="on"><?=$items['content'];?></textarea>
+                                                             <!-- <textarea class="form-control" readonly name="description" id="exampleFormControlTextarea1" rows="8"><?=$items['content'];?></textarea> -->
                                                        </div>
                                                  </div>
                                           </div>
-                                          -->
                                     </div>
 
                                     <div class="card-body Chakra">
-                                          <div class="boyutla text-right">
-                                               <i class="fa fa-user" aria-hidden="true"></i> <?=space.$row['user'];?>
+                                          <div class="boyutla text-left">
+                                               <i class="fa fa-user" aria-hidden="true"></i> <?=space.$items['user'];?>
                                                <?=space.space.'-'.space.space;?>
-                                               <i class="fa fa-link" aria-hidden="true"></i> <?=space.$row['ip_addres'];?>
+                                               <i class="fa fa-link" aria-hidden="true"></i> <?=space.$items['ip_addres'];?>
                                                <?=space.space.'-'.space.space;?>
-                                               <i class="fa fa-envelope" aria-hidden="true"></i> <?=space.$row['datee'];?>
+                                               <i class="fa fa-envelope" aria-hidden="true"></i> <?=space.$items['datee'];?>
                                           </div>
                                     </div>
 

@@ -31,6 +31,7 @@ class LibbFile {
                          <link href="'.domain.dirnameProject.'/assets/css/connect.min.css" rel="stylesheet" />
                          <link href="'.domain.dirnameProject.'/assets/css/dark_theme.css" rel="stylesheet" />
                          <link href="'.domain.dirnameProject.'/assets/css/special.css" rel="stylesheet" />
+                         <link href="'.domain.dirnameProject.'/assets/css/flex.css" rel="stylesheet" />
                          <link href="'.domain.dirnameProject.'/assets/css/lightbox.min.css" rel="stylesheet" media="screen" />
                          <link href="'.domain.dirnameProject.'/assets/css/custom.css" rel="stylesheet" />
                          <link href="'.domain.dirnameProject.'/assets/plugins/select2/css/select2.min.css" rel="stylesheet">

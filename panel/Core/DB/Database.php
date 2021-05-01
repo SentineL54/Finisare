@@ -14,13 +14,12 @@ class DataBase {
                 $DB->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
                 $DB->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
                 return $DB;
-              }
-           catch(PDOException $e) {
+            } catch(PDOException $e) {
               echo "Bağlantı hatası: " . $e->getMessage();
               }
         }
 
-        protected function closeDbCon( $DB = NULL ) { return $DB = null; }
+        protected function closeDbCon( $DB = NULL ) { return $DB = NULL; }
 }
 
 ?>

@@ -1,5 +1,4 @@
 <?php
-echo 'buradayımm';
 
 class slider extends Controller {
 
@@ -11,8 +10,8 @@ class slider extends Controller {
           'path' => 'slider',
           'type' => 'jpg', // png - webp - jpeg
           'ratio_fill' => FALSE, // TRUE - FALSE
-          'width' => 1280,
-          'height' => 720,
+          'width' => 780,
+          'height' => 320,
         ];
         // Picture - Create info
 
@@ -38,7 +37,7 @@ class slider extends Controller {
                       $this -> link = $this->sefLink( $_POST['title'] );
 
                       // Description - Create
-                      $this -> description = $this->strReplace( $_POST['title'] );
+                      $this -> description = $this->strReplace( $_POST['description'] );
                       // $this->strReplace( $_POST['description'] )
 
                       // Images -> Create
@@ -48,10 +47,10 @@ class slider extends Controller {
                           'picture' => self::pictureConfig
                       ] );
 
-                      $this -> view ( 'add' , $this->model->createBring( $data = $this ) , self::$viewFolder );
+                      $this -> view ( 'creat' , $this->model->createBring( $data = $this ) , self::$viewFolder );
 
                }  else
-                  $this -> view( 'add' , NULL , self::$viewFolder );
+                  $this -> view( 'creat' , NULL , self::$viewFolder );
         }
 
         public function read(){
