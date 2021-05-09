@@ -1,20 +1,18 @@
 {
-    "name": "finisare",
-    "description": "Finisare CMS System",
-    "authors": [
-       {
-          "name": "alinedim",
-          "email": "info@alinedim.com"
-       }
-    ],
-    "require": {
-        "tinify/tinify": "^1.5"
-    },
-    "autoload": {
-        "psr-4": {
-            "Core\\": "panel/Core/",
-            "App\\": "panel/App/"
+    “name”:”mustafayilmazist/composer_olusturmak”,
+    “type”:”project”,
+    “description”:”Finisare CMS Sysyem”,
+    “keywords”:[“Finisare”,”CMS Sysyem”],
+    “homepage”:”https://alinedim.com”,
+    “license”:”MIT”,
+    “authors”:[
+        {
+            “name”:”Ali NEDİM”,
+            “email”:info@alinedim.com”
         }
-    },
-
+    ],
+    “require”:
+    {
+      “alinedim/finisare”:”~1.0″
+    }
 }
