@@ -5,6 +5,12 @@ class menuu extends Model {
 
       private $tableName = 'menu';
 
+
+
+      public function __construct(  ){
+
+      }
+
       private function movementSave( array $data = NULL ){
 
               if( $data != NULL ){
@@ -98,7 +104,7 @@ class menuu extends Model {
              if( $data != NULL )
                   return $this->read( "SELECT * FROM $this->tableName WHERE upmenu_random=:upmenu_random ORDER BY ranking DESC" , [ 'upmenu_random' => $data ] );
              else
-                  return $this->read( "SELECT * FROM $this->tableName WHERE upmenu_random=:upmenu_random ORDER BY ranking DESC" , [ 'upmenu_random' => 0 ] );
+                  return $this->read( "SELECT * FROM $this->tableName WHERE upmenu=:upmenu ORDER BY ranking DESC" , [ 'upmenu' => 0 ] );
       }
 
       public function subMenuDelete( $data = NULL ){

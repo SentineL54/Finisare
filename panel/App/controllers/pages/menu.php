@@ -52,7 +52,6 @@ class menu extends Controller {
       }
 
       public function read( ) {
-
              $this -> view( 'read' , $this -> model -> readBringUpMenu( ), self::$viewFolder );
       }
 
